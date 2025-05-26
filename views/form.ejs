@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <main>
+            <h1>Message form</h1>
+            <form method="post" action="/new">
+                <div>
+                    <label for="user" id="user">Your name </label>
+                    <input name="messageUser" id="user" type="text">
+                </div>
+                <div>
+                    <label for="message" id="message">Message</label>
+                    <input name="messageText" id="message" type="text"  required>
+                </div>
+                <button type="submit">
+                    Send message
+                </button>
+            </form>
+        </main>
+    </body>
+</html>

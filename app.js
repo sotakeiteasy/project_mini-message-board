@@ -7,7 +7,15 @@ const port = 3000;
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs")
 
-app.get("/", indexRouter)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")))
+
+app.use("/", indexRouter)
+
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send("Server error");
+})
 
 app.listen(port, () => {
     console.log(`Server is running on port http://localhost:${port}`)

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <main>
+            <% messages.map(message => { %>
+                <div>
+                    <p class="userMessage"><%= message.text %></p>
+                    <p class="userName"><%= message.user %> - <span><%= message.added %></span></p>
+                </div>
+            <% }) %>
+            <a class="addBtn" role="button" href="/new">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>plus</title>
+                    <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                </svg>
+            </a>
+        </main>
+    </body>
+</html>
