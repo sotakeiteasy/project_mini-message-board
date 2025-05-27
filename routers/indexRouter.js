@@ -1,19 +1,6 @@
 const { Router } = require("express");
 const indexRouter = Router();
-const options = { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' };
-
-const messages = [
-    {
-      text: "Hi there!",
-      user: "Amando",
-      added: new Date().toLocaleString('ru-RU', options).split(", ").reverse().join(", "),
-    },
-    {
-      text: "Hello World!",
-      user: "Charles",
-      added:  new Date().toLocaleString('ru-RU', options).split(", ").reverse().join(", "),
-    }
-];
+const { messages, options } = require("../models/messages");
 
 indexRouter.get("/", (req, res) => {
     res.render("index", { title: "Mini message board", messages: messages })
